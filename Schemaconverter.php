@@ -1,15 +1,14 @@
 <?php
 
 /*******************************************************************************
-Mysql toSQLite schema export 
-Copyright (c) 2011 Deepesh Sharma
+	Mysql to SQLite schema export 
+	Copyright (c) 2011 Deepesh Sharma <aashish.acs@gmail.com>
 *******************************************************************************/
 
 // Defined ingredients
-
 define('DATABASE', 'sqlite_database_name.db');
 define('VERSION', '1.0');
-define('SQLITE_DATABASE_SCHEMA', 'mysql__database_schema_file.sql');
+define('SQLITE_DATABASE_SCHEMA', 'mysql_database_schema_file.sql');
 
 
 function export_sqlite_schema($hostname, $username, $password, $database, $db_tables = '*', $directory) {
@@ -61,11 +60,10 @@ function export_sqlite_schema($hostname, $username, $password, $database, $db_ta
 	$string_replace = array ("varchar" => "TEXT", "`" => '"', "AUTO_INCREMENT" => "", "ENGINE=MyISAM DEFAULT CHARSET=latin1" => "", "0)" => "0, 0)", "int" => "INTEGER", "float" => "REAL(10,1)", "unsigned " => "", "ENGINE=InnoDB DEFAULT CHARSET=latin1" => "" );
 	$schema = strtr ( $schema, $string_replace );
 	
-	$file_name = $directory . 'turfnutritiontool.sql';
-	$handle = fopen ( $file_name, 'w+' ); //'DB_'.date('d-m-Y').'.sql'
+	$file_name = $directory.SQLITE_DATABASE_SCHEMA;
+	$handle = fopen ( $file_name, 'w+' );
 	fwrite ( $handle, $schema );
 	fclose ( $handle );
-// 	echo $return;
 }
 
 function create_database() {
@@ -74,13 +72,13 @@ function create_database() {
 	
 	} else {
 		
-			try {
-					$db = new PDO('sqlite:' . DATABASE);
+		try {
+			$db = new PDO('sqlite:' . DATABASE);
 
 		    } catch(PDOException $e) {
 
-			  }
-	 }		
+		      }
+	       }		
 }
 
 function execute_database_query() {
