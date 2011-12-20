@@ -116,7 +116,7 @@ function execute_database_query() {
 	}
 }
 
-export_sqlite_schema ( "localhost", "admin", "admin", 'Mysql_database_name', '*', '' ); //backup_tables($dbhost, $dbuser, $dbpass, $dbname, '*', $dir);
+export_sqlite_schema ( "localhost", "admin", "admin", 'Mysql_database_name', '*', '' ); // export_sqlite_schema($hostname, $username, $password, $database, $db_tables = '*', $directory)
 create_database();
 execute_database_query();
 
