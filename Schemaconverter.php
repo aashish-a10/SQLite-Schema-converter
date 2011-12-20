@@ -7,10 +7,9 @@ Copyright (c) 2011 Deepesh Sharma
 
 // Defined ingredients
 
-define('DATABASE', 'turfnutritiontool.db');
-define('TITLE', 'PHP testing sandbox');
+define('DATABASE', 'sqlite_database_name.db');
 define('VERSION', '1.0');
-define('SQLITE_DATABASE_SCHEMA', 'turfnutritiontool.sql');
+define('SQLITE_DATABASE_SCHEMA', 'mysql__database_schema_file.sql');
 
 
 function export_sqlite_schema($hostname, $username, $password, $database, $db_tables = '*', $directory) {
@@ -119,7 +118,7 @@ function execute_database_query() {
 	}
 }
 
-export_sqlite_schema ( "localhost", "admin", "admin", 'tnt_tool', '*', '' ); //backup_tables($dbhost, $dbuser, $dbpass, $dbname, '*', $dir);
+export_sqlite_schema ( "localhost", "admin", "admin", 'Mysql_database_name', '*', '' ); //backup_tables($dbhost, $dbuser, $dbpass, $dbname, '*', $dir);
 create_database();
 execute_database_query();
 
