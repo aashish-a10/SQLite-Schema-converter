@@ -2,7 +2,7 @@
 
 /*******************************************************************************
 	Mysql to SQLite schema export 
-	Copyright (c) 2011 Deepesh Sharma <aashish.acs@gmail.com>
+	Copyright (c) 2011 Deepesh Sharma <deepeshsharma.acs@gmail.com>
 *******************************************************************************/
 
 // Defined ingredients
